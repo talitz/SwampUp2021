@@ -92,7 +92,7 @@ pipelines:
             JFROG_CLI_LOG_LEVEL: INFO
           affinityGroup: together
           dockerFileName: Dockerfile
-          dockerFileLocation: ${trainingPath}/lab3/java/
+          dockerFileLocation: src/lab3/java/
           dockerImageName: ${dockerRepo}/urs-docker/backapp-mvn-docker
           dockerImageTag: ${runVarAppVersion}
           inputSteps:
@@ -110,7 +110,7 @@ pipelines:
             - >-
               cp
               ${res_lab2_fs_backapp_mvn_resourcePath}/multi-module-application-${runVarAppVersion}.jar
-              ${res_lab2_src_dockerfile_backapp_mvn_resourcePath}/${trainingPath}/lab1/java/multi-module-application.jar
+              ${res_lab2_src_dockerfile_backapp_mvn_resourcePath}/${trainingPath}/src/java/multi-module-application.jar
 
       - name: lab2_publish_backapp_mvn_docker
         type: DockerPush
